@@ -98,7 +98,7 @@ public class wekaService {
 
     private boolean checkValid(request request) {
 
-        boolean valid = true;
+        /*boolean valid = true;
         if( !Character.isDigit( Integer.parseInt(request.getCar_ID())  ) ){
             valid = false;
         }
@@ -122,18 +122,12 @@ public class wekaService {
         }
         else if( !request.getEnginelocation().toLowerCase().equals("front") || !request.getEnginelocation().toLowerCase().equals("rear") ){
             valid = false;
-        }
+        }*/
 
         //TODO more validation and checking
 
 
-
-
-
-
-
-
-        return valid;
+        return true;
 
     }
 

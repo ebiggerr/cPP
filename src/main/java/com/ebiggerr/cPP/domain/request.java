@@ -1,10 +1,7 @@
 package com.ebiggerr.cPP.domain;
 
-import io.micrometer.core.lang.NonNull;
-
 public class request {
 
-    @NonNull
     private String car_ID;
     private String symboling;
     private String CarName;
