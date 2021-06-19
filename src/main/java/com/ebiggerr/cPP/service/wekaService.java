@@ -16,11 +16,11 @@ import java.io.File;
 import java.io.FileWriter;
 
 
-@PropertySource("classpath:application.properties")
+//@PropertySource("classpath:application.properties")
 public class wekaService {
 
-    @Value("${lr.model.path}")
-    private String LRModelPath;
+    //@Value("${lr.model.path}")
+    //private String LRModelPath;
 
     private Instances instancesFromDataSource;
 
@@ -44,7 +44,7 @@ public class wekaService {
 
         //TODO map request's fields and write to CSV file
         CSVWriter writer = new CSVWriter(new FileWriter(DATA_CSV_FILE_PATH, true)); // append the the end of the file
-
+        
         boolean validInput = checkValid(request);
 
         if( validInput ) {
