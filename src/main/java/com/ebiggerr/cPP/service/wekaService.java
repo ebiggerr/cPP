@@ -44,7 +44,7 @@ public class wekaService {
 
         //TODO map request's fields and write to CSV file
         CSVWriter writer = new CSVWriter(new FileWriter(DATA_CSV_FILE_PATH, true)); // append the the end of the file
-        
+
         boolean validInput = checkValid(request);
 
         if( validInput ) {
