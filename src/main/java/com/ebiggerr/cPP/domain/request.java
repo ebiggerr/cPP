@@ -1,31 +1,57 @@
 package com.ebiggerr.cPP.domain;
 
+import javax.validation.constraints.NotBlank;
+
 public class request {
 
     private String car_ID;
+    @NotBlank
     private String symboling;
+    @NotBlank
     private String CarName;
+    @NotBlank
     private String fueltype;
+    @NotBlank
     private String aspiration;
+    @NotBlank
     private String doornumber;
+    @NotBlank
     private String carbody;
+    @NotBlank
     private String drivewheel;
+    @NotBlank
     private String enginelocation;
+    @NotBlank
     private String wheelbase;
+    @NotBlank
     private String carlength;
+    @NotBlank
     private String carwidth;
+    @NotBlank
     private String carheight;
+    @NotBlank
     private String curbweight;
+    @NotBlank
     private String enginetype;
+    @NotBlank
     private String cylindernumber;
+    @NotBlank
     private String enginesize;
+    @NotBlank
     private String fuelsystem;
+    @NotBlank
     private String boreratio;
+    @NotBlank
     private String stroke;
+    @NotBlank
     private String compressionratio;
+    @NotBlank
     private String horsepower;
+    @NotBlank
     private String peakrpm;
+    @NotBlank
     private String citympg;
+    @NotBlank
     private String highwaympg;
 
     public request(String car_ID, String symboling, String carName, String fueltype, String aspiration, String doornumber, String carbody, String drivewheel, String enginelocation, String wheelbase, String carlength, String carwidth, String carheight, String curbweight, String enginetype, String cylindernumber, String enginesize, String fuelsystem, String boreratio, String stroke, String compressionratio, String horsepower, String peakrpm, String citympg, String highwaympg) {
