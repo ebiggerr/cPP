@@ -16,11 +16,11 @@ import java.io.File;
 import java.io.FileWriter;
 
 
-@PropertySource("classpath:application.properties")
+//@PropertySource("classpath:application.properties")
 public class wekaService {
 
-    @Value("${lr.model.path}")
-    private String LRModelPath;
+    //@Value("${lr.model.path}")
+    //private String LRModelPath;
 
     private Instances instancesFromDataSource;
 
