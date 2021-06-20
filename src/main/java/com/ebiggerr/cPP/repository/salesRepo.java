@@ -10,8 +10,11 @@ import java.util.Optional;
 public interface salesRepo extends JpaRepository<upForSales,Long> {
 
     @Query( value=" SELECT * FROM salesrecord WHERE accountid=?1 AND status='PENDING'",nativeQuery=true)
-    upForSales getByAccountidIsAndStatusIs(long accountid);
+    Optional<List<upForSales>> getByAccountidIsAndStatusIs(long accountid);
 
     @Query( value = "SELECT * FROM salesrecord WHERE accountid=?1" ,nativeQuery=true)
     Optional<List<upForSales>> getAllOfAnId(long accountid);
+
+    @Query (value="SELECT MAX(id) FROM salesrecord", nativeQuery=true)
+    long getMaxID();
 }

@@ -29,6 +29,7 @@ public class salesService {
 
         //get accountid using username in the system
         Optional<Long> accountIDFromDatabase = accountRepo.getIdByUsername( userSubmission.getName() );
+        long maxIDIncrement = salesRepo.getMaxID()+1;
         long accountid;
         if( accountIDFromDatabase.isPresent() ){
             accountid = accountIDFromDatabase.get();
@@ -37,7 +38,7 @@ public class salesService {
             return UNSUCCESSFUL_OPERATION;
         }
         upForSales newSales = new upForSales(
-                Long.parseLong( userSubmission.getCar_ID() ) ,
+                maxIDIncrement,
                 Long.parseLong( userSubmission.getSymboling() ),
                 userSubmission.getCarName(),
                 userSubmission.getFueltype(),
@@ -91,4 +92,21 @@ public class salesService {
 
         return list.orElse(null);
     }
+
+    public List<upForSales> getAllPutUpPendingSalesByUsername(String username) {
+
+        Optional<Long> accountIDFromDatabase = accountRepo.getIdByUsername( username );
+        long accountID;
+        if( accountIDFromDatabase.isPresent()){
+            accountID= accountIDFromDatabase.get();
+        }
+        else{
+            return null;
+        }
+        Optional<List<upForSales>> pendingSalesList = salesRepo.getByAccountidIsAndStatusIs( accountID );
+
+        return pendingSalesList.orElse(null);
+    }
+
+
 }
