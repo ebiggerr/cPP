@@ -36,7 +36,7 @@ public class wekaService {
      */
     public LinearRegression loadLRModel() throws Exception {
 
-        return (LinearRegression) weka.core.SerializationHelper.read("src/main/resources/carPP_LR.model");
+        return (LinearRegression) weka.core.SerializationHelper.read("src/main/resources/carPP_LR_v2.model");
     }
 
 
@@ -49,7 +49,14 @@ public class wekaService {
 
         if( validInput ) {
 
-            String[] record = {request.getCar_ID(), request.getSymboling(), request.getCarName(), request.getFuelsystem(), request.getAspiration(), request.getDoornumber(), request.getCarbody(), request.getDrivewheel(), request.getEnginelocation(), request.getWheelbase(), request.getCarlength(), request.getCarwidth(), request.getCarheight(), request.getCurbweight(), request.getEnginetype(), request.getCylindernumber(), request.getEnginesize(), request.getFuelsystem(), request.getBoreratio(), request.getStroke(), request.getCompressionratio(), request.getHorsepower(), request.getPeakrpm(), request.getCitympg(), request.getHighwaympg(), "0"};
+            String[] record = {request.getSymboling(), request.getCarName(), request.getFueltype(),
+                    request.getAspiration(), request.getDoornumber(), request.getCarbody(),
+                    request.getDrivewheel(), request.getEnginelocation(), request.getWheelbase(),
+                    request.getCarlength(), request.getCarwidth(), request.getCarheight(),
+                    request.getCurbweight(), request.getEnginetype(), request.getCylindernumber(),
+                    request.getEnginesize(), request.getFuelsystem(), request.getBoreratio(),
+                    request.getStroke(), request.getCompressionratio(), request.getHorsepower(),
+                    request.getPeakrpm(), request.getCitympg(), request.getHighwaympg(), "0"};
 
             //not apply quotes to the values
             writer.writeNext(record, false);
