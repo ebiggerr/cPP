@@ -272,8 +272,8 @@
     var saleData = {};
     var slider = document.getElementById("quotedPriceRange");
     var output = document.getElementById("quotedPrice");
-    var iteration = 10;
-    document.getElementById("car_ID").value = iteration;
+    //var iteration = 10;
+    //document.getElementById("car_ID").value = iteration;
 
     slider.oninput = function () {
         output.innerHTML = this.value;
@@ -283,8 +283,8 @@
         $('#submit').click(function() {
             $('#pricing-output').hide();
             $('#finalize-sale').hide();
-            var newIteration = iteration++;
-            document.getElementById("car_ID").value = newIteration;
+            //var newIteration = iteration++;
+            //document.getElementById("car_ID").value = newIteration;
             //carData["car_ID"] = $('#car_ID').val();
             //carData["car_ID"] = newIteration;
             carData["symboling"] = $('#symboling').val();
@@ -344,11 +344,34 @@
 
         $('#submit_sale').click(function() {
             if(document.getElementById('agree').checked) {
-
-                //saleData["contactNumber"] = $('#contactNumber').val();
+                saleData["name"] = "user3";
                 saleData["contactNumber"] = "012-31234123";
-                //saleData["price"] = $('#quotedPrice').val();
-                saleData["price"] = "19000.00";
+                saleData["price"] = $('#quotedPrice').text();
+
+                saleData["symboling"] = carData["symboling"];
+                saleData["carName"] = carData["carName"];
+                saleData["fueltype"] = carData["fueltype"];
+                saleData["aspiration"] = carData["aspiration"];
+                saleData["doornumber"] = carData["doornumber"];
+                saleData["carbody"] = carData["carbody"];
+                saleData["drivewheel"] = carData["drivewheel"];
+                saleData["enginelocation"] = carData["enginelocation"];
+                saleData["wheelbase"] = carData["wheelbase"]
+                saleData["carlength"] = carData["carlength"]
+                saleData["carwidth"] = carData["carwidth"]
+                saleData["carheight"] = carData["carheight"]
+                saleData["curbweight"] = carData["curbweight"]
+                saleData["enginetype"] = carData["enginetype"]
+                saleData["cylindernumber"] = carData["cylindernumber"]
+                saleData["enginesize"] = carData["enginesize"]
+                saleData["fuelsystem"] = carData["fuelsystem"]
+                saleData["boreratio"] = carData["boreratio"]
+                saleData["stroke"] = carData["stroke"]
+                saleData["compressionratio"] = carData["compressionratio"]
+                saleData["horsepower"] = carData["horsepower"]
+                saleData["peakrpm"] = carData["peakrpm"]
+                saleData["citympg"] = carData["citympg"];
+                saleData["highwaympg"] = carData["highwaympg"];
 
                 console.log(saleData);
 
@@ -356,10 +379,19 @@
                     type: "POST",
                     contentType: "application/json",
                     url: "/api/v1/sales",
-                    data: JSON.stringify(carData),
+                    data: JSON.stringify(saleData),
                     dataType: 'json',
                     success: function(data) {
-                        alert('Successfully placed for sale');
+                        const jsonData = JSON.stringify(data.status);
+                        const saleResponse = jsonData.replace(/\"/g, "");
+                        if (saleResponse === "Successful") {
+                            alert('Successfully placed for sale');
+                            console.log(data);
+                            location.reload();
+                        } else {
+                            console.log(data);
+                            alert("Failed to place vehicle for sale. Please try again");
+                        }
                         return true;
                     }
                 })
