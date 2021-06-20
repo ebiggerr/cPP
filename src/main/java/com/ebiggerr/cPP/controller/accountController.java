@@ -20,6 +20,11 @@ public class accountController {
         this.accountService=accountService;
     }
 
+    /**
+     *
+     * @param account child class of acccount @accountRequest carrying username and password in the request body
+     * @return Message of the operation successful : "Successful" ? "Unauthorized"
+     */
     @PostMapping(path="/authenticate")
     public ResponseEntity<authentication> loginOfAnAccount(@RequestBody account.accountRequest account){
 
@@ -28,6 +33,11 @@ public class accountController {
         return new ResponseEntity<authentication>( new authentication(message), HttpStatus.OK);
     }
 
+    /**
+     *
+     * @param account child class of account @accountRequest carrying username and password for registration purpose
+     * @return Message of the operation successful : "Successful" ? "Failed"
+     */
     @PostMapping
     public ResponseEntity<authentication> registrationOfAnAccount(@RequestBody account.accountRequest account){
 
