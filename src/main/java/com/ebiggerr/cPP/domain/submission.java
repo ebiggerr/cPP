@@ -6,6 +6,8 @@ import java.math.BigDecimal;
 
 public class submission extends request {
 
+    //disobey convention, it is the username in the table for the name fields
+    //to find the account id and put it inside the salesrecord (database table) along with car's specification
     private String name;
     private String contactNumber;
 

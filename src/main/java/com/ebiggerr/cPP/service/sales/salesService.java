@@ -27,6 +27,7 @@ public class salesService {
 
     public String putUpNewRecord(submission userSubmission) {
 
+        //get accountid using username in the system
         Optional<Long> accountIDFromDatabase = accountRepo.getIdByUsername( userSubmission.getName() );
         long accountid;
         if( accountIDFromDatabase.isPresent() ){
