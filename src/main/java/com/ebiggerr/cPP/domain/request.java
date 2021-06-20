@@ -4,7 +4,7 @@ import javax.validation.constraints.NotBlank;
 
 public class request {
 
-    private String car_ID;
+    //private String car_ID;
     @NotBlank
     private String symboling;
     @NotBlank
@@ -54,8 +54,8 @@ public class request {
     @NotBlank
     private String highwaympg;
 
-    public request(String car_ID, String symboling, String carName, String fueltype, String aspiration, String doornumber, String carbody, String drivewheel, String enginelocation, String wheelbase, String carlength, String carwidth, String carheight, String curbweight, String enginetype, String cylindernumber, String enginesize, String fuelsystem, String boreratio, String stroke, String compressionratio, String horsepower, String peakrpm, String citympg, String highwaympg) {
-        this.car_ID = car_ID;
+    public request(/*String car_ID,*/ String symboling, String carName, String fueltype, String aspiration, String doornumber, String carbody, String drivewheel, String enginelocation, String wheelbase, String carlength, String carwidth, String carheight, String curbweight, String enginetype, String cylindernumber, String enginesize, String fuelsystem, String boreratio, String stroke, String compressionratio, String horsepower, String peakrpm, String citympg, String highwaympg) {
+        //this.car_ID = car_ID;
         this.symboling = symboling;
         this.carName = carName;
         this.fueltype = fueltype;
@@ -81,14 +81,14 @@ public class request {
         this.citympg = citympg;
         this.highwaympg = highwaympg;
     }
-
+/*
     public String getCar_ID() {
         return car_ID;
     }
 
     public void setCar_ID(String car_ID) {
         this.car_ID = car_ID;
-    }
+    }*/
 
     public String getSymboling() {
         return symboling;
