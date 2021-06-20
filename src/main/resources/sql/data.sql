@@ -1,0 +1,10 @@
+INSERT INTO public.account VALUES (1, 'user3', '$2a$10$pKjnxefiZ9vJOGQqpdVDSe1ayCwjQugLGXmCpItkvqcVSYcMr8CsS');
+
+INSERT INTO public.salesrecord VALUES ('gas', 'front', 21, 9, 'alfa-romero giulia', 1, 'dohc', 27, 130, 3.47, 111, 64.1, 168.8, 'two', 'rwd', 5000, 'four', 2.68, 88.6, 'convertible', 3, 'std', 'mpfi', 48.8, 2548, 250.00, 1, '2021-06-20 15:43:02.47637', 'PENDING');
+INSERT INTO public.salesrecord VALUES ('gas', 'front', 21, 9, 'alfa-romero giulia', 206, 'dohc', 27, 130, 3.47, 111, 64.1, 168.8, 'two', 'rwd', 5000, 'four', 2.68, 88.6, 'convertible', 3, 'std', 'mpfi', 48.8, 2548, 250.00, 1, '2021-06-20 16:09:04.711346', 'PENDING');
+INSERT INTO public.salesrecord VALUES ('gas', 'front', 24, 8.5, 'vw rabbit', 191, 'ohc', 29, 109, 3.19, 90, 64, 165.7, 'two', 'fwd', 5500, 'four', 3.4, 94.5, 'hatchback', 3, 'std', 'mpfi', 51.4, 2221, NULL, 1, NULL, 'PENDING');
+INSERT INTO public.salesrecord VALUES ('gas', 'front', 17, 8.3, 'audi 4000', 9, 'ohc', 20, 131, 3.13, 140, 71.4, 192.7, 'four', 'fwd', 5500, 'five', 3.4, 105.8, 'sedan', 1, 'turbo', 'mpfi', 55.9, 3086, NULL, 1, NULL, 'PENDING');
+INSERT INTO public.salesrecord VALUES ('gas', 'front', 23, 7.5, 'mitsubishi mirage g4', 81, 'ohc', 30, 110, 3.17, 116, 65.4, 173, 'two', 'fwd', 5500, 'four', 3.46, 96.3, 'hatchback', 3, 'turbo', 'spdi', 49.4, 2370, NULL, 1, NULL, 'PENDING');
+INSERT INTO public.salesrecord VALUES ('gas', 'front', 14, 8, 'buick regal sport coupe (turbo)', 75, 'ohcv', 16, 304, 3.8, 184, 72, 199.2, 'two', 'rwd', 4500, 'eight', 3.35, 112, 'hardtop', 1, 'std', 'mpfi', 55.4, 3715, NULL, 1, NULL, 'PENDING');
+INSERT INTO public.salesrecord VALUES ('gas', 'front', 19, 8.5, 'volkswagen rabbit', 192, 'ohc', 24, 136, 3.19, 110, 66.9, 180.2, 'four', 'fwd', 5500, 'five', 3.4, 100.4, 'sedan', 0, 'std', 'mpfi', 55.1, 2661, NULL, 1, NULL, 'PENDING');
+INSERT INTO public.salesrecord VALUES ('gas', 'front', 24, 9.3, 'toyota corona liftback', 168, 'ohc', 30, 146, 3.62, 116, 65.6, 176.2, 'two', 'rwd', 4800, 'four', 3.5, 98.4, 'hardtop', 2, 'std', 'mpfi', 52, 2540, NULL, 1, NULL, 'PENDING');
