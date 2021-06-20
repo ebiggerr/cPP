@@ -24,8 +24,8 @@ public class saleController {
 
     /**
      *
-     * @param username
-     * @return
+     * @param username username of the account
+     * @return list of cars that have been put up for sales no matter sold,archived,cancelled or pending (salestatus)
      */
     @GetMapping(path ="/sales/{username}")
     public ResponseEntity<List<upForSales>> returnListOfSalesPutUp(@PathVariable String username){
