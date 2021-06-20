@@ -8,7 +8,7 @@ public class request {
     @NotBlank
     private String symboling;
     @NotBlank
-    private String CarName;
+    private String carName;
     @NotBlank
     private String fueltype;
     @NotBlank
@@ -57,7 +57,7 @@ public class request {
     public request(String car_ID, String symboling, String carName, String fueltype, String aspiration, String doornumber, String carbody, String drivewheel, String enginelocation, String wheelbase, String carlength, String carwidth, String carheight, String curbweight, String enginetype, String cylindernumber, String enginesize, String fuelsystem, String boreratio, String stroke, String compressionratio, String horsepower, String peakrpm, String citympg, String highwaympg) {
         this.car_ID = car_ID;
         this.symboling = symboling;
-        this.CarName = carName;
+        this.carName = carName;
         this.fueltype = fueltype;
         this.aspiration = aspiration;
         this.doornumber = doornumber;
@@ -99,11 +99,11 @@ public class request {
     }
 
     public String getCarName() {
-        return CarName;
+        return carName;
     }
 
     public void setCarName(String carName) {
-        CarName = carName;
+        this.carName = carName;
     }
 
     public String getFueltype() {

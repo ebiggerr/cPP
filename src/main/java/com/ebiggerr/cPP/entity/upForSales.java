@@ -21,7 +21,7 @@ public class upForSales {
     @Id
     private long id;
 
-    private String symboling;
+    private long symboling;
 
     private String carname;
 
@@ -37,37 +37,37 @@ public class upForSales {
 
     private String enginelocation;
 
-    private String wheelbase;
+    private double wheelbase;
 
-    private String carlength;
+    private double carlength;
 
-    private String carwidth;
+    private double carwidth;
 
-    private String carheight;
+    private double carheight;
 
-    private String curbweight;
+    private long curbweight;
 
     private String enginetype;
 
     private String cylindernumber;
 
-    private String enginesize;
+    private long enginesize;
 
     private String fuelsystem;
 
-    private String boreratio;
+    private double boreratio;
 
-    private String stroke;
+    private double stroke;
 
-    private String compressionratio;
+    private double compressionratio;
 
-    private String horsepower;
+    private long horsepower;
 
-    private String peakrpm;
+    private long peakrpm;
 
-    private String citympg;
+    private long citympg;
 
-    private String highwaympg;
+    private long highwaympg;
 
     @Enumerated(EnumType.STRING)
     @Column(columnDefinition = "salesstatus")
@@ -82,7 +82,12 @@ public class upForSales {
     @Column(name="timestampadded", nullable=true)
     private LocalDateTime timestamp;
 
-    public upForSales(long id, String symboling, String carname, String fueltype, String aspiration, String doornumber, String carbody, String drivewheel, String enginelocation, String wheelbase, String carlength, String carwidth, String carheight, String curbweight, String enginetype, String cylindernumber, String enginesize, String fuelsystem, String boreratio, String stroke, String compressionratio, String horsepower, String peakrpm, String citympg, String highwaympg, status status, BigDecimal price, long accountid, LocalDateTime timestamp) {
+    public upForSales(long id, long symboling, String carname, String fueltype, String aspiration, String doornumber,
+                      String carbody, String drivewheel, String enginelocation, double wheelbase, double carlength,
+                      double carwidth, double carheight, long curbweight, String enginetype, String cylindernumber,
+                      long enginesize, String fuelsystem, double boreratio,  double stroke, double compressionratio,
+                      long horsepower, long peakrpm, long citympg, long highwaympg, status status, BigDecimal price,
+                      long accountid, LocalDateTime timestamp) {
         this.id = id;
         this.symboling = symboling;
         this.carname = carname;
@@ -126,11 +131,11 @@ public class upForSales {
         this.id = id;
     }
 
-    public String getSymboling() {
+    public long getSymboling() {
         return symboling;
     }
 
-    public void setSymboling(String symboling) {
+    public void setSymboling(long symboling) {
         this.symboling = symboling;
     }
 
@@ -190,43 +195,43 @@ public class upForSales {
         this.enginelocation = enginelocation;
     }
 
-    public String getWheelbase() {
+    public double getWheelbase() {
         return wheelbase;
     }
 
-    public void setWheelbase(String wheelbase) {
+    public void setWheelbase(double wheelbase) {
         this.wheelbase = wheelbase;
     }
 
-    public String getCarlength() {
+    public double getCarlength() {
         return carlength;
     }
 
-    public void setCarlength(String carlength) {
+    public void setCarlength(double carlength) {
         this.carlength = carlength;
     }
 
-    public String getCarwidth() {
+    public double getCarwidth() {
         return carwidth;
     }
 
-    public void setCarwidth(String carwidth) {
+    public void setCarwidth(double carwidth) {
         this.carwidth = carwidth;
     }
 
-    public String getCarheight() {
+    public double getCarheight() {
         return carheight;
     }
 
-    public void setCarheight(String carheight) {
+    public void setCarheight(double carheight) {
         this.carheight = carheight;
     }
 
-    public String getCurbweight() {
+    public long getCurbweight() {
         return curbweight;
     }
 
-    public void setCurbweight(String curbweight) {
+    public void setCurbweight(long curbweight) {
         this.curbweight = curbweight;
     }
 
@@ -246,11 +251,11 @@ public class upForSales {
         this.cylindernumber = cylindernumber;
     }
 
-    public String getEnginesize() {
+    public long getEnginesize() {
         return enginesize;
     }
 
-    public void setEnginesize(String enginesize) {
+    public void setEnginesize(long enginesize) {
         this.enginesize = enginesize;
     }
 
@@ -262,59 +267,59 @@ public class upForSales {
         this.fuelsystem = fuelsystem;
     }
 
-    public String getBoreratio() {
+    public double getBoreratio() {
         return boreratio;
     }
 
-    public void setBoreratio(String boreratio) {
+    public void setBoreratio(double boreratio) {
         this.boreratio = boreratio;
     }
 
-    public String getStroke() {
+    public double getStroke() {
         return stroke;
     }
 
-    public void setStroke(String stroke) {
+    public void setStroke(double stroke) {
         this.stroke = stroke;
     }
 
-    public String getCompressionratio() {
+    public double getCompressionratio() {
         return compressionratio;
     }
 
-    public void setCompressionratio(String compressionratio) {
+    public void setCompressionratio(double compressionratio) {
         this.compressionratio = compressionratio;
     }
 
-    public String getHorsepower() {
+    public long getHorsepower() {
         return horsepower;
     }
 
-    public void setHorsepower(String horsepower) {
+    public void setHorsepower(long horsepower) {
         this.horsepower = horsepower;
     }
 
-    public String getPeakrpm() {
+    public long getPeakrpm() {
         return peakrpm;
     }
 
-    public void setPeakrpm(String peakrpm) {
+    public void setPeakrpm(long peakrpm) {
         this.peakrpm = peakrpm;
     }
 
-    public String getCitympg() {
+    public long getCitympg() {
         return citympg;
     }
 
-    public void setCitympg(String citympg) {
+    public void setCitympg(long citympg) {
         this.citympg = citympg;
     }
 
-    public String getHighwaympg() {
+    public long getHighwaympg() {
         return highwaympg;
     }
 
-    public void setHighwaympg(String highwaympg) {
+    public void setHighwaympg(long highwaympg) {
         this.highwaympg = highwaympg;
     }
 

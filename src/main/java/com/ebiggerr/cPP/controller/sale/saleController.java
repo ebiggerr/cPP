@@ -43,6 +43,9 @@ public class saleController {
 
         String message = null;
 
+        //System.out.println( userSubmission.getContactNumber());
+        //System.out.println( userSubmission.getPrice() );
+
         message = salesService.putUpNewRecord(userSubmission);
 
         return new ResponseEntity<authentication>( new authentication(message), HttpStatus.OK);
