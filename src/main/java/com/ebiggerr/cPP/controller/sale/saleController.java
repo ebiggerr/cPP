@@ -35,8 +35,8 @@ public class saleController {
 
     /**
      *
-     * @param userSubmission
-     * @return
+     * @param userSubmission POST request body from the user
+     * @return status of the operation successful : "Successful" ? "Failed"
      */
     @PostMapping(path = "/sales")
     public ResponseEntity<authentication> putUpANewCarIntoTheSystem(@Valid @RequestBody submission userSubmission){
