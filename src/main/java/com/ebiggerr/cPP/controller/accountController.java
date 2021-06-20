@@ -38,7 +38,7 @@ public class accountController {
      * @param account child class of account @accountRequest carrying username and password for registration purpose
      * @return Message of the operation successful : "Successful" ? "Failed"
      */
-    @PostMapping
+    @PostMapping(path="/register")
     public ResponseEntity<authentication> registrationOfAnAccount(@RequestBody account.accountRequest account){
 
         String message = accountService.registrationOfAnAccount(account);

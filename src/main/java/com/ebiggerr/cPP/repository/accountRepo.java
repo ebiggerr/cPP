@@ -15,4 +15,8 @@ public interface accountRepo extends JpaRepository<account.accountRequest,Long> 
 
     @Query(value="SELECT accountid FROM account WHERE accountusername=?1", nativeQuery=true)
     Optional<Long> getIdByUsername(String username);
+
+    @Query(value="SELECT MAX(accountid) FROM account", nativeQuery=true)
+    long getMaxID();
+
 }

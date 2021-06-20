@@ -1,6 +1,7 @@
 package com.ebiggerr.cPP.service;
 
 import com.ebiggerr.cPP.domain.account;
+import com.ebiggerr.cPP.domain.account.accountRequest;
 import com.ebiggerr.cPP.repository.accountRepo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -58,9 +59,16 @@ public class accountService {
      */
     public String registrationOfAnAccount(account.accountRequest account) {
 
+            long maxIDIncrement = accountRepo.getMaxID()+1;
 
+            accountRequest newRegistration = new accountRequest( maxIDIncrement,account.getUsername(), passwordEncoder.encode( account.getPassword() ));
 
+            try{
+                accountRepo.save(newRegistration);
+            }catch (Exception e){
+                return UNSUCCESSFUL_REGISTER;
+            }
 
-        return UNSUCCESSFUL_REGISTER;
+        return SUCCESSFUL_LOGIN; //reuse the from login to reduce creation of String object
     }
 }
