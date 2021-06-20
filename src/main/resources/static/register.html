@@ -10,7 +10,7 @@
 <!-- Navbar -->
 <div class="w3-top">
     <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
-        <a href="/" class="w3-bar-item w3-button">Online Car Reseller Platform</a>
+        <a href="index.html" class="w3-bar-item w3-button">Online Car Reseller Platform</a>
         <div class="w3-right w3-hide-small">
             <a href="login.html" class="w3-bar-item w3-button">Log-In</a>
             <a href="register.html" class="w3-bar-item w3-button">Register</a>
@@ -22,24 +22,39 @@
 <!-- Header -->
 
 <!-- Page content -->
-<div class="w3-content" style="max-width:1280px; margin-top: 5%;">
-
-    <div class="w3-container w3-padding-64" id="contact">
-        <h1>Registration</h1><br>
-        <p>Enter all the fields below</p>
-        <form action="/registerUser.php" target="_blank">
-            <p><input class="w3-input w3-padding-16" type="text" placeholder="Full Name" required name="FullName"></p>
-            <p><input class="w3-input w3-padding-16" type="text" placeholder="Email" required name="Email"></p>
-            <p><input class="w3-input w3-padding-16" type="password" placeholder="Password" required name="Password"></p>
-            <p><input class="w3-input w3-padding-16" type="password" placeholder="Re-enter Password" required name="PasswordConfirm"></p>
-            <p><input class="w3-input w3-padding-16" type="text" placeholder="Contact Number" required name="ContactNumber"></p>
-            <p><input class="w3-input w3-padding-16" type="text" placeholder="Address" required name="Address"></p>
-            <p><button class="w3-button w3-light-grey w3-section" type="submit">LOG IN</button></p>
-        </form>
-      </div>
-
+<div class="register-box">
+    <h1 class="register-header">Register an Account</h1>
+    <p style="text-align: center;">Enter all the fields below</p>
+    <br>
+    <p><input class="w3-input w3-padding-16" type="text" placeholder="Username" required name="Username" id="username"></p>
+    <p><input class="w3-input w3-padding-16" type="password" placeholder="Password" required name="Password" id="password"></p>
+    <p><input class="w3-input w3-padding-16" type="password" placeholder="Re-type Password" required name="PasswordConfirm" id="passwordConfirm"></p>
+    <p><input type="submit" id="submit" name="" value="Register"></p>
 </div>
-  
 </body>
 </div>
 </html>
+
+<script>
+    jQuery(document).ready(function ($) {
+        $('#submit').click(function () {
+            var userData = {};
+            userData["username"] = $("#username").val();
+            userData["password"] = $("#password").val();
+
+            console.log(userData);
+
+            $.ajax({
+                type: "POST",
+                contentType: "application/json",
+                url: "/api/v1/account/register",
+                data: JSON.stringify(userData),
+                dataType: 'json',
+                success: function(data) {
+                    console.log(JSON.stringify(data));
+                    // close();
+                }
+            })
+        })
+    })
+</script>
