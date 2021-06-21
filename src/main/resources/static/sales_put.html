@@ -313,6 +313,8 @@
             carData["highwaympg"] = $('#highwaympg').val();
 
             console.log(carData);
+
+            // rand to simulate the loading circle
             var rand = Math.round(Math.random() * (2000 - 500)) + 500;
 
             $.ajax({
@@ -328,11 +330,11 @@
                     const maxSuggestedPrice = Math.ceil(suggestedPrice) + 2500;
                     const minSuggestedPrice = Math.floor(suggestedPrice) - 2500;
                     $('#outputPrediction').html("US$").append(jsonData.replace(/\"/g, ""));
-                    $('#loading').show();
+                    $('#loading').show(); //show loading circle
                     setTimeout(function () {
-                        $('#loading').hide();
-                        $('#pricing-output').slideUp( 300 ).fadeIn( 400 );
-                        $('#finalize-sale').slideUp( 300 ).fadeIn( 800 );
+                        $('#loading').hide(); //hide loading circle
+                        $('#pricing-output').slideUp( 300 ).fadeIn( 400 ); //show the predicted price div
+                        $('#finalize-sale').slideUp( 300 ).fadeIn( 800 ); //show the final price div
                         slider.min = minSuggestedPrice;
                         slider.max = maxSuggestedPrice;
                         slider.value = suggestedPrice;
