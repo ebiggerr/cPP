@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<link rel="stylesheet" href="css/stylesheet.css">
+<script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+
+<body>
+<!-- Navbar -->
+<div class="w3-top">
+    <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+    <a href="index.html" class="w3-bar-item w3-button">Online Car Reseller Platform</a>
+        <div class="w3-right w3-hide-small">
+            <a href="login.html" class="w3-bar-item w3-button">Log-In</a>
+            <a href="register.html" class="w3-bar-item w3-button">Register</a>
+            <a href="sales.html" class="w3-bar-item w3-button">Sales</a>
+        </div>
+    </div>
+</div>
+
+<!-- Form Block -->
+<div class="container-put-sales">
+    <!-- form action="#" -->
+    <div class="two-cols">
+        <div class="col-holder">
+            <div class="input-block-wrap" style="display: none;">
+                <label>Car ID</label>
+                <div class="form-row">
+                    <input type="text" id="car_ID" name="car_ID" disabled>
+                </div>
+            </div>
+            <div class="input-block-wrap">
+                <label>Manufacturer</label>
+                <div class="form-row">
+                    <input type="text" id="CarBrand" name="CarBrand" value="alfa-romeo">
+                </div>
+            </div>
+            <div class="input-block-wrap">
+                <label>Model Name</label>
+                <div class="form-row">
+                    <input type="text" id="CarName" name="CarName" value="giulia">
+                </div>
+            </div>
+            <div class="input-block-wrap">
+                <label>Symboling</label>
+                <div class="form-row">
+                    <input type="text" id="symboling" name="symboling" value="3">
+                </div>
+            </div>
+            <div class="input-block-wrap">
+                <label>Car Body</label>
+                <div class="form-row">
+                    <select id="carbody" name="carbody">
+                        <option value="null" disabled >-- SELECT --</option>
+                        <option value="sedan">Sedan</option>
+                        <option value="hatchback">Hatchback</option>
+                        <option value="convertible" selected>Convertible</option>
+                        <option value="wagon">Wagon</option>
+                    </select>
+                </div>
+            </div>
+            <div class="input-block-wrap">
+                <label>Number of Doors</label>
+                <div class="form-row">
+                    <select id="doornumber" name="doornumber">
+                        <option value="null" disabled>-- SELECT --</option>
+                        <option value="two" selected>Two</option>
+                        <option value="four">Four</option>
+                    </select>
+                </div>
+            </div>
+            <div class="input-block-wrap">
+                <label>Curb Weight (kilograms)</label>
+                <div class="form-row">
+                    <input type="text" id="curbweight" name="curbweight" value="2548">
+                </div>
+            </div>
+            <div class="input-block-wrap">
+                <label>Wheelbase (centimeters)</label>
+                <div class="form-row">
+                    <input type="text" id="wheelbase" name="wheelbase" value="88.6">
+                </div>
+            </div>
+            <div class="input-block-wrap">
+                <label>Car Length</label>
+                <div class="form-row">
+                    <input type="text" id="carlength" name="carlength" value="168.8">
+                </div>
+            </div>
+            <div class="input-block-wrap">
+                <label>Car Width</label>
+                <div class="form-row">
+                    <input type="text" id="carwidth" name="carwidth" value="64.1">
+                </div>
+            </div>
+            <div class="input-block-wrap">
+                <label>Car Height</label>
+                <div class="form-row">
+                    <input type="text" id="carheight" name="carheight" value="48.8">
+                </div>
+            </div>
+        </div>
+        <div class="col-holder">
+            <div class="input-block-wrap">
+                <label>Engine Type</label>
+                <div class="form-row">
+                    <select id="enginetype" name="enginetype">
+                        <option value="null" disabled>-- SELECT --</option>
+                        <option value="dohc" selected>DOHC</option>
+                        <option value="dohcv">DOHCV</option>
+                        <option value="ohc">OHC</option>
+                        <option value="ohcf">OHCF</option>
+                        <option value="ohcv">OHCV</option>
+                        <option value="rotor">Rotary</option>
+                        <option value="l">L</option>
+                    </select>
+                </div>
+            </div>
+            <div class="input-block-wrap">
+                <label>Number of Cylinders</label>
+                <div class="form-row">
+                    <select id="cylindernumber" name="cylindernumber">
+                        <option value="null" disabled>-- SELECT --</option>
+                        <option value="four" selected>Four</option>
+                        <option value="six">Six</option>
+                        <option value="eight">Eight</option>
+                    </select>
+                </div>
+            </div>
+            <div class="input-block-wrap">
+                <label>Fuel Type</label>
+                <div class="form-row">
+                    <select id="fueltype" name="fueltype">
+                        <option value="null" disabled >-- SELECT --</option>
+                        <option value="gas" selected>Gas</option>
+                        <option value="diesel">Diesel</option>
+                    </select>
+                </div>
+            </div>
+            <div class="input-block-wrap">
+                <label>Fuel System</label>
+                <div class="form-row">
+                    <select id="fuelsystem" name="fuelsystem">
+                        <option value="null" disabled >-- SELECT --</option>
+                        <option value="mfi">Multi-Port Fuel Injection (MFI)</option>
+                        <option value="mpfi" selected>Multi-Point Fuel Injection (MPFI)</option>
+                        <option value="spfi">Spark Plug Fuel Injection (SPFI)</option>
+                        <option value="idi">Indirect Injection (IDI)</option>
+                        <option value="1bbl">1BBL</option>
+                        <option value="2bbl">2BBL</option>
+                    </select>
+                </div>
+            </div>
+            <div class="input-block-wrap">
+                <label>Engine Aspiration</label>
+                <div class="form-row">
+                    <select id="aspiration" name="aspiration">
+                        <option value="null" disabled >-- SELECT --</option>
+                        <option value="std" selected>Standard</option>
+                        <option value="turbo">Turbo</option>
+                    </select>
+                </div>
+            </div>
+            <div class="input-block-wrap">
+                <label>Engine Size</label>
+                <div class="form-row">
+                    <input type="text" id="enginesize" name="enginesize" value="110">
+                </div>
+            </div>
+            <div class="input-block-wrap">
+                <label>Engine Location</label>
+                <div class="form-row">
+                    <select id="enginelocation" name="enginelocation">
+                        <option value="null" disabled >-- SELECT --</option>
+                        <option value="front" selected>Front</option>
+                        <option value="rear">Rear</option>
+                    </select>
+                </div>
+            </div>
+            <div class="input-block-wrap">
+                <label>Drivewheel</label>
+                <div class="form-row">
+                    <select id="drivewheel" name="drivewheel">
+                        <option value="null" disabled >-- SELECT --</option>
+                        <option value="fwd">Front-Wheel Drive</option>
+                        <option value="rwd" selected>Rear-Wheel Drive</option>
+                        <option value="4wd">Four-Wheel Drive</option>
+                    </select>
+                </div>
+            </div>
+            <div class="input-block-wrap">
+                <label>Bore Ratio</label>
+                <div class="form-row">
+                    <input type="text" id="boreratio" name="boreratio" value="3.47">
+                </div>
+            </div>
+            <div class="input-block-wrap">
+                <label>Stroke</label>
+                <div class="form-row">
+                    <input type="text" id="stroke" name="stroke" value="2.68">
+                </div>
+            </div>
+            <div class="input-block-wrap">
+                <label>Compression Ratio</label>
+                <div class="form-row">
+                    <input type="text" id="compressionratio" name="compressionratio" value="9">
+                </div>
+            </div>
+        </div>
+        <div class="col-holder">
+            <div class="input-block-wrap">
+                <label>Horsepower</label>
+                <div class="form-row">
+                    <input type="text" id="horsepower" name="horsepower" value="111">
+                </div>
+            </div>
+            <div class="input-block-wrap">
+                <label>Peak RPM</label>
+                <div class="form-row">
+                    <input type="text" id="peakrpm" name="peakrpm" value="5000">
+                </div>
+            </div>
+            <div class="input-block-wrap">
+                <label>City Mileage (mpg)</label>
+                <div class="form-row">
+                    <input type="text" id="citympg" name="citympg" value="21">
+                </div>
+            </div>
+            <div class="input-block-wrap">
+                <label>Highway Mileage (mpg)</label>
+                <div class="form-row">
+                    <input type="text" id="highwaympg" name="highwaympg" value="27">
+                </div>
+            </div>
+            <div class="input-block-wrap">
+                <div class="form-row">
+                    <input type="submit" value="Calculate" id="submit" style="width: 11.4em; height: 40px">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /form -->
+</div>
+<div class="loading" id="loading" style="display: none;"></div>
+<div class="container-put-sales-right">
+    <div id="pricing-output" style="display: none;">
+        <h2><b>Calculated Price</b></h2>
+        Based on the information given, the system has predicted that the resale value of your vehicle is:
+        <h3><div id="outputPrediction"></div></h3>
+        <br>
+        <h2><b>Adjust your pricing</b></h2>
+        <input type="range" min="1000" max="80000" value="10000" class="slider" id="quotedPriceRange" name="quotedPriceRange">
+        <h3>US$ <span id="quotedPrice"></span></h3>
+    </div>
+    <div class="finalize-sale" id="finalize-sale" style="display: none">
+        <h2><b>Finalize your sale</b></h2>
+        Upload a picture of the vehicle for sale
+        <br>
+        <input type="file" id="carPhoto" name="carPhoto">
+        <br><br>
+        <input type="checkbox" name="checkbox" value="check" id="agree">
+        I have read and agree to the Terms and Conditions involved with sales
+        <br><br>
+        <input type="submit" value="Place Sale" id="submit_sale" style="width: 11.4em; height: 40px">
+    </div>
+</div>
+
+<script>
+    var carData = {};
+    var saleData = {};
+    var slider = document.getElementById("quotedPriceRange");
+    var output = document.getElementById("quotedPrice");
+    //var iteration = 10;
+    //document.getElementById("car_ID").value = iteration;
+
+    slider.oninput = function () {
+        output.innerHTML = this.value;
+    }
+
+    jQuery(document).ready(function($) {
+        $('#submit').click(function() {
+            $('#pricing-output').hide();
+            $('#finalize-sale').hide();
+            //var newIteration = iteration++;
+            //document.getElementById("car_ID").value = newIteration;
+            //carData["car_ID"] = $('#car_ID').val();
+            //carData["car_ID"] = newIteration;
+            carData["symboling"] = $('#symboling').val();
+            carData["carName"] = $('#CarBrand').val() + " " +$('#CarName').val();
+            carData["fueltype"] = $('#fueltype').val();
+            carData["aspiration"] = $('#aspiration').val();
+            carData["doornumber"] = $('#doornumber').val();
+            carData["carbody"] = $('#carbody').val();
+            carData["drivewheel"] = $('#drivewheel').val();
+            carData["enginelocation"] = $('#enginelocation').val();
+            carData["wheelbase"] = $('#wheelbase').val();
+            carData["carlength"] = $('#carlength').val();
+            carData["carwidth"] = $('#carwidth').val();
+            carData["carheight"] = $('#carheight').val();
+            carData["curbweight"] = $('#curbweight').val();
+            carData["enginetype"] = $('#enginetype').val();
+            carData["cylindernumber"] = $('#cylindernumber').val();
+            carData["enginesize"] = $('#enginesize').val();
+            carData["fuelsystem"] = $('#fuelsystem').val();
+            carData["boreratio"] = $('#boreratio').val();
+            carData["stroke"] = $('#stroke').val();
+            carData["compressionratio"] = $('#compressionratio').val();
+            carData["horsepower"] = $('#horsepower').val();
+            carData["peakrpm"] = $('#peakrpm').val();
+            carData["citympg"] = $('#citympg').val();
+            carData["highwaympg"] = $('#highwaympg').val();
+
+            console.log(carData);
+
+            // rand to simulate the loading circle
+            var rand = Math.round(Math.random() * (2000 - 500)) + 500;
+
+            $.ajax({
+                type: "POST",
+                contentType: "application/json",
+                url: "/api/v1/prediction",
+                data: JSON.stringify(carData),
+                dataType: 'json',
+                success: function(data) {
+                    console.log(JSON.stringify(data));
+                    const jsonData = JSON.stringify(data.predictedPrice);
+                    var suggestedPrice = parseFloat(jsonData.replace(/\"/g, ""));
+                    const maxSuggestedPrice = Math.ceil(suggestedPrice) + 2500;
+                    const minSuggestedPrice = Math.floor(suggestedPrice) - 2500;
+                    $('#outputPrediction').html("US$").append(jsonData.replace(/\"/g, ""));
+                    $('#loading').show(); //show loading circle
+                    setTimeout(function () {
+                        $('#loading').hide(); //hide loading circle
+                        $('#pricing-output').slideUp( 300 ).fadeIn( 400 ); //show the predicted price div
+                        $('#finalize-sale').slideUp( 300 ).fadeIn( 800 ); //show the final price div
+                        slider.min = minSuggestedPrice;
+                        slider.max = maxSuggestedPrice;
+                        slider.value = suggestedPrice;
+                        output.innerHTML = suggestedPrice;
+                    }, rand);
+                }
+            })
+        })
+
+        $('#submit_sale').click(function() {
+            if(document.getElementById('agree').checked) {
+                saleData["name"] = "user3";
+                saleData["contactNumber"] = "012-31234123";
+                saleData["price"] = $('#quotedPrice').text();
+
+                saleData["symboling"] = carData["symboling"];
+                saleData["carName"] = carData["carName"];
+                saleData["fueltype"] = carData["fueltype"];
+                saleData["aspiration"] = carData["aspiration"];
+                saleData["doornumber"] = carData["doornumber"];
+                saleData["carbody"] = carData["carbody"];
+                saleData["drivewheel"] = carData["drivewheel"];
+                saleData["enginelocation"] = carData["enginelocation"];
+                saleData["wheelbase"] = carData["wheelbase"]
+                saleData["carlength"] = carData["carlength"]
+                saleData["carwidth"] = carData["carwidth"]
+                saleData["carheight"] = carData["carheight"]
+                saleData["curbweight"] = carData["curbweight"]
+                saleData["enginetype"] = carData["enginetype"]
+                saleData["cylindernumber"] = carData["cylindernumber"]
+                saleData["enginesize"] = carData["enginesize"]
+                saleData["fuelsystem"] = carData["fuelsystem"]
+                saleData["boreratio"] = carData["boreratio"]
+                saleData["stroke"] = carData["stroke"]
+                saleData["compressionratio"] = carData["compressionratio"]
+                saleData["horsepower"] = carData["horsepower"]
+                saleData["peakrpm"] = carData["peakrpm"]
+                saleData["citympg"] = carData["citympg"];
+                saleData["highwaympg"] = carData["highwaympg"];
+
+                console.log(saleData);
+
+                $.ajax({
+                    type: "POST",
+                    contentType: "application/json",
+                    url: "/api/v1/sales",
+                    data: JSON.stringify(saleData),
+                    dataType: 'json',
+                    success: function(data) {
+                        const jsonData = JSON.stringify(data.status);
+                        const saleResponse = jsonData.replace(/\"/g, "");
+                        if (saleResponse === "Successful") {
+                            alert('Successfully placed for sale');
+                            console.log(data);
+                            location.reload();
+                        } else {
+                            console.log(data);
+                            alert("Failed to place vehicle for sale. Please try again");
+                        }
+                        return true;
+                    }
+                })
+            }
+            else {
+                alert('Please indicate that you agree to the Terms and Conditions');
+                return false;
+            }
+        })
+    })
+</script>
+</body>
+</div>
+</html>
